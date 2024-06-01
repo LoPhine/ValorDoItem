@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obter Valor do Item</title>
+    <script>
+        function obterValor() {
+            let item = document.getElementById('itemInput').value.toLowerCase();
+            item = item.charAt(0).toUpperCase() + item.slice(1);
+
+            const feira = {
+                'Banana': 'R$10.00',
+                'Uva': 'R$8.00',
+                'Maça': 'R$7.00',
+                'Lichia': 'R$20.00',
+                'Mamão': 'R$15.00'
+            };
+
+            if (item in feira) {
+                document.getElementById('resultado').innerText = `O valor do ${item} é ${feira[item]}.`;
+            } else {
+                document.getElementById('resultado').innerText = 'Item não encontrado.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Obter Valor do Item</h1>
+    <label for="itemInput">Digite o item:</label>
+    <input type="text" id="itemInput">
+    <button onclick="obterValor()">Obter Valor</button>
+    <p id="resultado"></p>
+</body>
+</html>
